@@ -106,7 +106,7 @@ class InputBuffer {
   }
 
   /// Read a single byte.
-  int readByte() => buffer[offset++];
+  int readByte() => offset >= buffer.length ? 0 : buffer[offset++];
 
   int readInt8() => uint8ToInt8(readByte());
 
